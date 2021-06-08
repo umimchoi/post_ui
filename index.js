@@ -6,8 +6,8 @@ const cors = require('cors');
 var bodyParser = require('body-parser')
 const { request } = require('express')
 
-app.use(json())
-app.use(urlencoded({extended: false}))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 // Middlewares
 app.use(cors());
 var bankrefs = [
