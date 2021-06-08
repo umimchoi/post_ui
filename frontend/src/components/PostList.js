@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
-import { Card, Typography, CardContent } from '@material-ui/core';
+import { Card, Typography, CardContent, TextField, Button } from '@material-ui/core';
 
 function PostList() {
     const [posts, setPosts] = useState([])
     const [bankrefs, setBankrefs] = useState([])
     const [errorMsg, setErrormsg] = useState('')
+    const [id, setID] = useState('')
+    const [ref1, setRef1] = useState()
+    const [ref2, setRef2] = useState()
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts1') 
@@ -28,7 +31,18 @@ function PostList() {
          console.log(err)
        });
       },[]);
-console.log(bankrefs)
+const post_bankref = () => {
+    console.log(ref2)
+        axios
+          .post("http://localhost:5000/bankref",
+          { id: id, ref1:ref1, ref2: ref2 })
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
     return (
         <div class="bankrefs">
             <div class="sms">
@@ -40,6 +54,15 @@ console.log(bankrefs)
                 }
                 { errorMsg ? <div>{errorMsg}</div> : null}
             </div> <br></br>
+            <form noValidate autoComplete="off">
+      <div>
+        
+      <TextField required id="standard-required" label="Required" defaultValue="ref id" onChange={(e) => setID(e.target.value)} />
+      <TextField required id="standard-required" label="Required" defaultValue="ref1" onChange={(e) => setRef1(e.target.value)}/>
+      <TextField required id="standard-required" label="Required" defaultValue="ref2" onChange={(e) => setRef2(e.target.value)}/>
+      <Button onClick={post_bankref}> POST </Button>
+        </div>
+        </form>
             <div class="bankref">
                 <p> Bankrefs </p>
                 {bankrefs.map((ref) => (
