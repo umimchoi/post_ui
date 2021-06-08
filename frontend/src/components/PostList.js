@@ -79,18 +79,22 @@ function PostList() {
 
     return (
         <div class="bankrefs">
+            <div className="sms">
+            <p> SMS </p>
             <form noValidate autoComplete="off">
             <div>
                 <TextField required id="standard-required" label="Required" defaultValue="phone" onChange={(e) => setPhone(e.target.value)} />
                 <TextField required id="standard-required" label="Required" defaultValue="message" onChange={(e) => setMessage(e.target.value)}/>
-                <Button onClick={post_sms}> POST </Button>
+                <br></br>
+                <Button className="buttonPost" onClick={post_sms}> POST </Button>
             </div>
             </form>
+            <br></br>
                 <div class="bankref">
-                    <p> SMS </p>
                         {postSMS.map((sms) => (
+                            <div>
                             <Card>
-                                <CardContent>
+                                <CardContent style={{backgroundColor:'#f3f0d7'}}>
                                     <Typography gutterBottom>
                                     phone : {sms.phone}
                                     </Typography>
@@ -99,21 +103,28 @@ function PostList() {
                                     </Typography>
                                 </CardContent>
                             </Card>
+                            <br></br>
+                            </div>
                             ))} 
                 </div>
+            </div>
+            <div className="bank">
+            <p> Bankrefs </p>
             <form noValidate autoComplete="off">
             <div>
                 <TextField required id="standard-required" label="Required" defaultValue="ref id" onChange={(e) => setID(e.target.value)} />
                 <TextField required id="standard-required" label="Required" defaultValue="ref1" onChange={(e) => setRef1(e.target.value)}/>
                 <TextField required id="standard-required" label="Required" defaultValue="ref2" onChange={(e) => setRef2(e.target.value)}/>
-                <Button onClick={post_bankref}> POST </Button>
+                <br></br>
+                <Button className="buttonPost" onClick={post_bankref}> POST </Button>
             </div>
+            <br></br>
             </form>
                 <div class="bankref">
-                    <p> Bankrefs </p>
                         {bankrefs.map((ref) => (
+                            <div>
                             <Card>
-                                <CardContent>
+                                <CardContent style={{backgroundColor:'#f3f0d7'}} >
                                     <Typography gutterBottom>
                                     id : {ref.id}
                                     </Typography>
@@ -125,9 +136,13 @@ function PostList() {
                                     </Typography>
                                 </CardContent>
                             </Card>
+                            <br></br>
+                            </div>
                             ))} 
+                            
                 </div>
             </div>
+        </div>
     )
 }
 
