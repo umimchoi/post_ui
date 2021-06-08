@@ -65,7 +65,6 @@ const post_bankref = () => {
             </div> <br></br>
             <form noValidate autoComplete="off">
       <div>
-        
       <TextField required id="standard-required" label="Required" defaultValue="ref id" onChange={(e) => setID(e.target.value)} />
       <TextField required id="standard-required" label="Required" defaultValue="ref1" onChange={(e) => setRef1(e.target.value)}/>
       <TextField required id="standard-required" label="Required" defaultValue="ref2" onChange={(e) => setRef2(e.target.value)}/>
