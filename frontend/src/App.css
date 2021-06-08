@@ -1,27 +1,19 @@
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .sms {
+  text-align: center;
   position: fixed;
   width: 330px;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 100px;
+ 
 }
 
 .bank {
+  text-align: center;
   position: fixed;
   width: 330px;
   margin-top: auto;
@@ -29,19 +21,17 @@
   margin-left: 550px;
 }
 
-.bankref{
+.bankref {
+  max-height: 400px;
+  width: 320px;
   overflow: scroll;
   overflow: auto;
+  align-items: center;
 }
 
-.bankrefs {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  overflow: scroll;
+.postsystem {
+  height: 100vh;
+  background-color: #f8f8f6;
 }
 
 .cardBank {
@@ -49,6 +39,9 @@
   margin-bottom: 10px;
 }
 
+.postsystem .cardd {
+  max-width: 500px;
+}
 .sms .buttonPost {
   margin-top: 10px;
   width: 180px;
@@ -60,27 +53,30 @@
   width: 180px;
   background-color: #d5dbb3;
 }
-
-.App-header {
-  background-color: #fff5eb;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.bankref .MuiTypography-h5 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.bankref .MuiCardContent-root:last-child {
+  padding-bottom: 0;
+}
+.bankref .MuiCardHeader-root{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
   color: white;
+  font-size: 20px;
+}
+.bankref .MuiCardContent-root {
+    font-size: 15px;
+    color: gray;
+    text-align: left;
+    align-items: center;
+}
+.bankref .text {
+    display: flex;
+    align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bankref hr {
+  border-top: 0px solid #e6e6e6;
 }
