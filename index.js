@@ -6,8 +6,8 @@ const cors = require('cors');
 var bodyParser = require('body-parser')
 const { request } = require('express')
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(json())
+app.use(urlencoded({extended: false}))
 // Middlewares
 app.use(cors());
 var bankrefs = [
@@ -17,7 +17,14 @@ var bankrefs = [
     "ref2" : "dsds"
   }
 ]
-var sms = []
+
+var postSMS = [
+  {
+    "phone" : "0909090909",
+    "message" : "Hello world"
+  }
+]
+
 app.get('/bankref', (req, res) => {
   res.send(bankrefs)
 })
@@ -30,15 +37,16 @@ app.post('/bankref', (req, res) => {
     res.status(200).send(bankref)
   }
 })
+
 app.get('/sms', (req, res) => {
-  res.send(sms)
+  res.send(postSMS)
 })
 app.post('/sms', (req, res) => {
   var data = req.body
   if(!data || data.text == ""){
     res.status(500).send({error: "Your sms must not be blank"})
   } else {
-    bankrefs.push(data)
+    postSMS.push(data)
     res.status(200).send(data)
   }
 })
