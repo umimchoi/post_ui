@@ -13,8 +13,23 @@
   }
 }
 
+.sms {
+  width: 330px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+}
+
+.bank {
+  width: 330px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+}
+
+
 .App-header {
-  background-color: #282c34;
+  background-color: #fff5eb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
