@@ -1,39 +1,44 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from "react";
 import axios from 'axios'
 
-export class PostList extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            posts: [],
-            errorMsg: ''
-        }
-    }
+function PostList() {
+    const [posts, setPosts] = useState([])
+    const [bankrefs, setBankrefs] = useState([])
+    const [errorMsg, setErrormsg] = useState('')
 
-    componentDidMount(){
-       axios.get('https://jsonplaceholder.typicode.com/posts1') 
-       .then(response => {
-           console.log(response)
-           this.setState({posts: response.data})
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/posts1') 
+        .then(response => {
+            console.log(response)
+            setPosts(response.data)
+        })
+        .catch(error => {
+            console.log(error)
+            setErrormsg('Error retreiving data')
+        })
+ 
+         axios
+       .get(`http://localhost:5000/bankref`)
+       .then((res) => {
+           console.log(res)
+           setBankrefs(res.data)
        })
-       .catch(error => {
-           console.log(error)
-           this.setState({errorMsg: 'Error retreiving data'})
-       })
-    }
-    render() {
-        const { posts, errorMsg } = this.state
-        return(
-            <div>
+       .catch((err) => {
+         console.log(err)
+       });
+      },[]);
+
+    return (
+        <div>
                 List of Post 
                 {
-                    posts.length ?
-                    posts.map(post => <div key={post.id}>{post.title}</div>) :
+                    {posts}.length ?
+                    {posts}.map(post => <div key={post.id}>{post.id}</div>) :
                     null
                 }
                 { errorMsg ? <div>{errorMsg}</div> : null}
-            </div>
-        )
-    }
+        </div>
+    )
 }
+
 export default PostList

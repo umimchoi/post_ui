@@ -5,7 +5,12 @@ var bodyParser = require('body-parser')
 const { request } = require('express')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
-var bankrefs = []
+var bankrefs = [
+  {
+    "id" : "1234",
+    "ref1" : "qqw"
+  }
+]
 var sms = []
 app.get('/bankref', (req, res) => {
   res.send(bankrefs)
