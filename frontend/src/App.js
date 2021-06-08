@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css';
-import { Button, Container } from '@material-ui/core';
 import PostList from './components/PostList';
 
 function App() {

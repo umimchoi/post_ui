@@ -13,7 +13,8 @@ app.use(cors());
 var bankrefs = [
   {
     "id" : "1234",
-    "ref1" : "qqw"
+    "ref1" : "qqw",
+    "ref2" : "dsds"
   }
 ]
 var sms = []
