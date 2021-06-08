@@ -9,7 +9,11 @@ function PostList() {
     const [id, setID] = useState('')
     const [ref1, setRef1] = useState()
     const [ref2, setRef2] = useState()
-
+    const [ref, setRef] = useState({
+       id : "",
+       ref1 : "",
+       ref2 : ""
+      });
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts1') 
         .then(response => {
@@ -32,16 +36,21 @@ function PostList() {
        });
       },[]);
 const post_bankref = () => {
-    console.log(ref2)
+    var ref = {
+        id : id,
+        ref1 : ref1,
+        ref2 : ref2
+    }
+    console.log(ref)
         axios
-          .post("http://localhost:5000/bankref",
-          { id: id, ref1:ref1, ref2: ref2 })
+          .post("http://localhost:5000/bankref", ref)
           .then((res) => {
             console.log(res)
           })
           .catch((err) => {
             console.log(err);
           });
+          window.location.reload();
       };
     return (
         <div class="bankrefs">

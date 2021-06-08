@@ -22,7 +22,7 @@ app.get('/bankref', (req, res) => {
   res.send(bankrefs)
 })
 app.post('/bankref', (req, res) => {
-  var bankref = request.body
+  var bankref = req.body
   if(!bankref || bankref.text == ""){
     res.status(500).send({error: "Your bankref must have text"})
   } else {
@@ -34,7 +34,7 @@ app.get('/sms', (req, res) => {
   res.send(sms)
 })
 app.post('/sms', (req, res) => {
-  var data = request.body
+  var data = req.body
   if(!data || data.text == ""){
     res.status(500).send({error: "Your sms must not be blank"})
   } else {
