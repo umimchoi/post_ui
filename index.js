@@ -1,10 +1,15 @@
 const express = require('express')
 const app = express()
 const port = 5000
+const cors = require('cors');
+
 var bodyParser = require('body-parser')
 const { request } = require('express')
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+// Middlewares
+app.use(cors());
 var bankrefs = [
   {
     "id" : "1234",
