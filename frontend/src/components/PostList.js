@@ -74,6 +74,7 @@ function PostList() {
     return (
         <div class="postsystem">
             <div className="sms">
+            <Card style={{width: "305px"}}>
                 <p> SMS </p>
                 <form noValidate autoComplete="off">
                     <div>
@@ -84,10 +85,12 @@ function PostList() {
                         error ={message.length === 0 ? true : false} 
                         required id="standard-required" label="Message" onChange={(e) => setMessage(e.target.value)} />
                         <br></br>
-                        {phone.length != 0 && message.length != 0 ? <Button className="buttonPost" onClick={post_sms}> POST </Button> : null } 
+                        {phone.length !== 0 && message.length !== 0 ? <Button className="buttonPost" onClick={post_sms}> POST </Button> : null } 
                     </div>
                 </form>
                 <br></br>
+            </Card>
+            <br></br>
                 <div class="bankref">
                     {postSMS.map((sms) => (
                         <div className="cardd">
@@ -109,6 +112,7 @@ function PostList() {
                 </div>
             </div>
             <div className="bank">
+            <Card style={{width: "305px"}}>
                 <p> Bankrefs </p>
                 <form noValidate autoComplete="off">
                     <div>
@@ -122,10 +126,12 @@ function PostList() {
                         error ={ref2.length === 0 ? true : false} 
                         required id="standard-required" label="ref2" onChange={(e) => setRef2(e.target.value)} />
                         <br></br>
-                        {id.length != 0 && ref1.length != 0 && ref2.length != 0 ?  <Button className="buttonPost" onClick={post_bankref}> POST </Button> : null}
+                        {id.length !== 0 && ref1.length !== 0 && ref2.length !== 0 ?  <Button className="buttonPost" onClick={post_bankref}> POST </Button> : null}
                     </div>
                     <br></br>
                 </form>
+                </Card>
+                <br></br>
                 <div class="bankref">
                     {bankrefs.map((ref) => (
                         <div className="cardd">

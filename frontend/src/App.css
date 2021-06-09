@@ -1,28 +1,23 @@
-.App {
-}
-
-
 .sms {
   text-align: center;
   position: fixed;
   width: 330px;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 100px;
- 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 240px;
 }
 
 .bank {
   text-align: center;
   position: fixed;
   width: 330px;
-  margin-top: auto;
+  margin-top: 20px;
   margin-bottom: auto;
-  margin-left: 550px;
+  margin-left: 670px;
 }
 
 .bankref {
-  max-height: 400px;
+  max-height: 430px;
   width: 320px;
   overflow: scroll;
   overflow: auto;
@@ -31,6 +26,7 @@
 
 .postsystem {
   height: 100vh;
+  align-items: center;
   background-color: #f8f8f6;
 }
 
@@ -41,17 +37,20 @@
 
 .postsystem .cardd {
   max-width: 500px;
+  margin-top: 20px;
 }
 .sms .buttonPost {
   margin-top: 10px;
   width: 180px;
-  background-color: #d5dbb3;
+  color: white;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
 }
 
 .bank .buttonPost {
   margin-top: 10px;
   width: 180px;
-  background-color: #d5dbb3;
+  color: white;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
 }
 .bankref .MuiTypography-h5 {
   font-size: 20px;
