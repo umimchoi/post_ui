@@ -74,8 +74,8 @@ function PostList() {
     return (
         <div class="postsystem">
             <div className="sms">
-            <Card style={{width: "305px"}}>
-                <p> SMS </p>
+            <Card style={{width: "300px"}}>
+                <p style={{color: "rgba(6,147,101,1)",fontWeight: "bold"}}> SMS </p>
                 <form noValidate autoComplete="off">
                     <div>
                         <TextField
@@ -95,25 +95,24 @@ function PostList() {
                     {postSMS.map((sms) => (
                         <div className="cardd">
                             <Card>
-                                <CardHeader title="SMS">  </CardHeader>
+                                <CardHeader title="SMS" >  </CardHeader>
                                 <CardContent style={{ backgroundColor: 'white' }}>
                                     <div className="text">
-                                        <PhoneIphoneIcon />&nbsp;<p style={{fontWeight: "bold"}}> phone : </p>&nbsp; <p>{sms.phone} </p>
+                                        <PhoneIphoneIcon style={{height: "18px"}}/>&nbsp;<p style={{fontWeight: "bold"}}> phone : </p>&nbsp; <p>{sms.phone} </p>
                                     </div>
                                     <hr></hr>
                                     <div className="text">
-                                        <MailOutlineIcon />&nbsp; <p style={{fontWeight: "bold"}}>message : </p>&nbsp; <p>{sms.message}</p>
+                                        <MailOutlineIcon style={{height: "18px"}}/>&nbsp; <p style={{fontWeight: "bold"}}>message : </p>&nbsp; <p>{sms.message}</p>
                                     </div>
                                 </CardContent>
                             </Card>
-                            <br></br>
                         </div>
                     ))}
                 </div>
             </div>
             <div className="bank">
-            <Card style={{width: "305px"}}>
-                <p> Bankrefs </p>
+            <Card style={{width: "300px"}}>
+                <p style={{color: "#f37335",fontWeight: "bold"}}> Bankrefs </p>
                 <form noValidate autoComplete="off">
                     <div>
                         <TextField 
@@ -136,18 +135,18 @@ function PostList() {
                     {bankrefs.map((ref) => (
                         <div className="cardd">
                             <Card>
-                                <CardHeader title="Bankref">  </CardHeader>
+                                <CardHeader title="Bankref" className="headerbank">  </CardHeader>
                                 <CardContent style={{ backgroundColor: 'white' }} >
                                     <div className="text">
-                                        <PermIdentityIcon />&nbsp; <p style={{fontWeight: "bold"}}>id : &nbsp;</p> {ref.id}
+                                        <PermIdentityIcon style={{height: "18px"}}/>&nbsp; <p style={{fontWeight: "bold"}}>id : &nbsp;</p> {ref.id}
                                     </div>
                                     <hr></hr>
                                     <div className="text">
-                                        <LibraryBooksIcon />&nbsp; <p style={{fontWeight: "bold"}}>ref1 :&nbsp;</p> {ref.ref1}
+                                        <LibraryBooksIcon style={{height: "18px"}}/>&nbsp; <p style={{fontWeight: "bold"}}>ref1 :&nbsp;</p> {ref.ref1}
                                     </div>
                                     <hr></hr>
                                     <div className="text">
-                                        <LibraryBooksIcon />&nbsp; <p style={{fontWeight: "bold"}}>ref2 : &nbsp;</p>{ref.ref2}
+                                        <LibraryBooksIcon style={{height: "18px"}}/>&nbsp; <p style={{fontWeight: "bold"}}>ref2 : &nbsp;</p>{ref.ref2}
                                     </div>
                                 </CardContent>
                             </Card>

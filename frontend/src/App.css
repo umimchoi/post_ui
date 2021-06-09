@@ -36,9 +36,10 @@
 }
 
 .postsystem .cardd {
-  max-width: 500px;
+  max-width: 400px;
   margin-top: 20px;
 }
+
 .sms .buttonPost {
   margin-top: 10px;
   width: 180px;
@@ -50,26 +51,38 @@
   margin-top: 10px;
   width: 180px;
   color: white;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
+  background: linear-gradient(90deg, #f37335 10%, #fdc830 100%);
 }
 .bankref .MuiTypography-h5 {
   font-size: 20px;
   font-weight: bold;
 }
+.bankref .MuiCard-root{
+  width: 300px;
+}
+
 .bankref .MuiCardContent-root:last-child {
   padding-bottom: 0;
 }
 .bankref .MuiCardHeader-root{
+  padding: 8px;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
   color: white;
   font-size: 20px;
+}
+.bankref .headerbank{
+  background: linear-gradient(90deg, #f37335 10%, #fdc830 100%);
 }
 .bankref .MuiCardContent-root {
     font-size: 15px;
     color: gray;
     text-align: left;
     align-items: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 18px;
+    padding-left: 18px;
 }
 .bankref .text {
     display: flex;
