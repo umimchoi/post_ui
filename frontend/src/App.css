@@ -62,7 +62,7 @@
 }
 
 .bankref .MuiCardContent-root:last-child {
-  padding-bottom: 0;
+  padding-bottom: 20px;
 }
 .bankref .MuiCardHeader-root{
   padding: 8px;
@@ -91,4 +91,15 @@
 
 .bankref hr {
   border-top: 0px solid #e6e6e6;
+}
+.bankref .message {
+  align-items: center;
+}
+
+.bankref span {
+    margin: auto;
+    text-align: center;
+    display:block;
+    width:250px;
+    word-wrap:break-word;
 }

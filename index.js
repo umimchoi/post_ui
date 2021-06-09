@@ -4,26 +4,15 @@ const port = 5000
 const cors = require('cors');
 
 var bodyParser = require('body-parser')
-const { request } = require('express')
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 // Middlewares
 app.use(cors());
-var bankrefs = [
-  {
-    "id" : "1234",
-    "ref1" : "qqw",
-    "ref2" : "dsds"
-  }
-]
+var bankrefs = []
 
-var postSMS = [
-  {
-    "phone" : "0909090909",
-    "message" : "Hello world"
-  }
-]
+var postSMS = []
 
 app.get('/bankref', (req, res) => {
   res.send(bankrefs)
