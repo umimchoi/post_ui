@@ -14,8 +14,8 @@ function PostList() {
     const [ref2, setRef2] = useState('')
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
-    useEffect(() => {
-        axios.get('http://localhost:5000/sms')
+     useEffect( async() => {
+        await axios.get('http://localhost:5000/sms')
             .then(response => {
                 console.log(response)
                 setPostSMS(response.data)
@@ -25,7 +25,7 @@ function PostList() {
                 setErrormsg('Error retreiving data')
             })
 
-        axios
+        await axios
             .get(`http://localhost:5000/bankref`)
             .then((res) => {
                 console.log(res)
@@ -71,8 +71,8 @@ function PostList() {
         window.location.reload();
     };
 
-    const delete_sms = () => {
-        axios
+    const delete_sms = async() => {
+       await axios
             .delete("http://localhost:5000/sms")
             .then((res) => {
                 console.log(res)
@@ -83,8 +83,8 @@ function PostList() {
         window.location.reload();
     };
 
-    const delete_bank = () => {
-        axios
+    const delete_bank = async() => {
+        await axios
             .delete("http://localhost:5000/bankref")
             .then((res) => {
                 console.log(res)
@@ -98,7 +98,7 @@ function PostList() {
     return (
         <div class="postsystem">
             <div className="sms">
-            <Button className="deleteSMS" style={{ color: "white", fontWeight: "bold" }} onClick={delete_sms}> DELETE SMS </Button>
+                <Button className="deleteSMS" style={{ color: "white", fontWeight: "bold" }} onClick={delete_sms}> DELETE SMS </Button>
                 {/*<Card style={{ width: "300px" }}>
                     <p style={{ color: "rgba(6,147,101,1)", fontWeight: "bold" }}> SMS </p>
                     <form noValidate autoComplete="off">
@@ -117,7 +117,7 @@ function PostList() {
                 </Card>
     <br></br> */}
                 <br></br><br></br>
-                <div class="bankref"> 
+                <div class="bankref">
                     {postSMS.map((sms) => (
                         <div className="cardd">
                             <Card>
@@ -138,8 +138,8 @@ function PostList() {
                 </div>
             </div>
             <div className="bank">
-            <Button className="deleteBank" style={{ color: "white", fontWeight: "bold" }} onClick={delete_bank}> DELETE BankRef </Button> 
-               {/* <Card style={{ width: "300px" }}>
+                <Button className="deleteBank" style={{ color: "white", fontWeight: "bold" }} onClick={delete_bank}> DELETE BankRef </Button>
+                {/* <Card style={{ width: "300px" }}>
                     <p style={{ color: "#f37335", fontWeight: "bold" }}> Bankrefs </p>
                     <form noValidate autoComplete="off">
                         <div>
@@ -159,8 +159,8 @@ function PostList() {
                     </form>
                 </Card>
                     <br></br> */}
-                    <br></br>
-                    <br></br>
+                <br></br>
+                <br></br>
                 <div class="bankref">
                     {bankrefs.map((ref) => (
                         <div className="cardd">
