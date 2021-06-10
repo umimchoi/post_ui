@@ -48,6 +48,14 @@
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
 }
 
+.sms .deleteSMS:hover{
+  background: tomato;
+}
+
+.bank .deleteBank:hover{
+  background: tomato;
+}
+
 .deleteBank {
   margin-top: 10px;
   width: 250px;
