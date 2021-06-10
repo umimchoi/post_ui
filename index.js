@@ -26,7 +26,10 @@ app.post('/bankref', (req, res) => {
     res.status(200).send(bankref)
   }
 })
-
+app.delete('/bankref', (req, res) => {
+  bankrefs = []
+  res.send(bankrefs)
+})
 app.get('/sms', (req, res) => {
   res.send(postSMS)
 })
@@ -38,6 +41,10 @@ app.post('/sms', (req, res) => {
     postSMS.push(data)
     res.status(200).send(data)
   }
+})
+app.delete('/sms', (req, res) => {
+  postSMS = []
+  res.send(postSMS)
 })
 app.get('/', (req, res) => {
   res.send('Hello World!')
