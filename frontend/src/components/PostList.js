@@ -71,9 +71,34 @@ function PostList() {
         window.location.reload();
     };
 
+    const delete_sms = () => {
+        axios
+            .delete("http://localhost:5000/sms")
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        window.location.reload();
+    };
+
+    const delete_bank = () => {
+        axios
+            .delete("http://localhost:5000/bankref")
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        window.location.reload();
+    };
+
     return (
         <div class="postsystem">
             <div className="sms">
+            <Button className="deleteSMS" style={{ color: "white", fontWeight: "bold" }} onClick={delete_sms}> DELETE SMS </Button>
                 {/*<Card style={{ width: "300px" }}>
                     <p style={{ color: "rgba(6,147,101,1)", fontWeight: "bold" }}> SMS </p>
                     <form noValidate autoComplete="off">
@@ -91,7 +116,8 @@ function PostList() {
                     <br></br>
                 </Card>
     <br></br> */}
-                <div class="bankref">
+                <br></br><br></br>
+                <div class="bankref"> 
                     {postSMS.map((sms) => (
                         <div className="cardd">
                             <Card>
@@ -112,6 +138,7 @@ function PostList() {
                 </div>
             </div>
             <div className="bank">
+            <Button className="deleteBank" style={{ color: "white", fontWeight: "bold" }} onClick={delete_bank}> DELETE BankRef </Button> 
                {/* <Card style={{ width: "300px" }}>
                     <p style={{ color: "#f37335", fontWeight: "bold" }}> Bankrefs </p>
                     <form noValidate autoComplete="off">
@@ -132,6 +159,8 @@ function PostList() {
                     </form>
                 </Card>
                     <br></br> */}
+                    <br></br>
+                    <br></br>
                 <div class="bankref">
                     {bankrefs.map((ref) => (
                         <div className="cardd">

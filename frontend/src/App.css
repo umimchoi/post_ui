@@ -17,7 +17,7 @@
 }
 
 .bankref {
-  max-height: 430px;
+  max-height: 620px;
   width: 320px;
   overflow: scroll;
   overflow: auto;
@@ -38,6 +38,22 @@
 .postsystem .cardd {
   max-width: 400px;
   margin-top: 20px;
+}
+
+.deleteSMS {
+  margin-top: 10px;
+  width: 250px;
+  height: 45px;
+  color: white;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,147,101,1) 0%, rgba(78,193,66,1) 48%, rgba(158,221,51,1) 100%);
+}
+
+.deleteBank {
+  margin-top: 10px;
+  width: 250px;
+  height: 45px;
+  color: white;
+  background: linear-gradient(90deg, #f37335 10%, #fdc830 100%);
 }
 
 .sms .buttonPost {

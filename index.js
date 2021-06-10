@@ -14,6 +14,7 @@ var bankrefs = []
 
 var postSMS = []
 
+//GET POST DELETE BankRef
 app.get('/bankref', (req, res) => {
   res.send(bankrefs)
 })
@@ -30,6 +31,9 @@ app.delete('/bankref', (req, res) => {
   bankrefs = []
   res.send(bankrefs)
 })
+
+
+//GET POST DELETE SMS
 app.get('/sms', (req, res) => {
   res.send(postSMS)
 })
@@ -46,10 +50,11 @@ app.delete('/sms', (req, res) => {
   postSMS = []
   res.send(postSMS)
 })
+
+//Get localhost:5000
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
-
 app.listen(port, (error) => {
     console.log(`Listening on port ${port}`);
   });
