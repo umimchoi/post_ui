@@ -3,16 +3,13 @@ const app = express()
 const port = 5000
 const cors = require('cors');
 
-var bodyParser = require('body-parser')
-
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
-// Middlewares
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 app.use(cors());
-var bankrefs = []
 
-var postSMS = []
+let bankrefs = []
+
+let postSMS = []
 
 //GET POST DELETE BankRef
 app.get('/bankref', (req, res) => {
