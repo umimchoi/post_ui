@@ -12,8 +12,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors());
 var bankrefs = []
 
-var postSMS = [ 
-]
+var postSMS = []
 
 //GET POST DELETE BankRef
 app.get('/bankref', (req, res) => {

@@ -33,7 +33,7 @@ function DeleteSMSButton() {
 
 function SmsContainer(){
     const [postSMS, setPostSMS] = useState([]);
-    const [errorMsg, setErrormsg] = useState('')
+    const [errorMsg, setErrormsg] = useState('');
     
     useEffect(async() =>{
         await axios.get('http://localhost:5000/sms')
