@@ -38,7 +38,7 @@ function SmsContainer(){
     useEffect(async() =>{
         await axios.get('http://localhost:5000/sms')
             .then(response => {
-                console.log(response)
+             //   console.log(response)
                 setPostSMS(response.data)
             })
             .catch(error => {

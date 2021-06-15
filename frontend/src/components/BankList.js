@@ -35,11 +35,11 @@ function BankContainer(){
     const [bankrefs, setBankrefs] = useState([]);
     const [errorMsg, setErrormsg] = useState('');
     
-    useEffect(async() =>{
+    useEffect( async() =>{
         await axios
             .get(`http://localhost:5000/bankref`)
             .then((res) => {
-                console.log(res)
+              //  console.log(res)
                 setBankrefs(res.data)
             })
             .catch((err) => {
@@ -52,7 +52,7 @@ function BankContainer(){
         <div class="bankref">
             { bankrefs.map((ref) => (
                 <div class="SmsCard">
-                    <BankCard ref={ref}/>
+                    <BankCard Ref={ref}/>
                 </div>
             ))}
         </div>
@@ -61,22 +61,23 @@ function BankContainer(){
 
 
 
-function BankCard({ref}) {
+function BankCard({Ref}) {
+console.log(Ref)
     return (
         <div className="cardd">
             <Card>
                 <CardHeader title="Bankref" className="headerbank">  </CardHeader>
                 <CardContent style={{ backgroundColor: 'white' }} >
                     <div className="text">
-                        <PermIdentityIcon style={{ height: "18px" }} />&nbsp; <p style={{ fontWeight: "bold" }}>id : &nbsp;</p> {ref.id}
+                        <PermIdentityIcon style={{ height: "18px" }} />&nbsp; <p style={{ fontWeight: "bold" }}>id : &nbsp;</p> {Ref.id}
                     </div>
                     <hr></hr>
                     <div className="text">
-                        <LibraryBooksIcon style={{ height: "18px" }} />&nbsp; <p style={{ fontWeight: "bold" }}>ref1 :&nbsp;</p> {ref.ref1}
+                        <LibraryBooksIcon style={{ height: "18px" }} />&nbsp; <p style={{ fontWeight: "bold" }}>ref1 :&nbsp;</p> {Ref.ref1}
                     </div>
                     <hr></hr>
                     <div className="text">
-                        <LibraryBooksIcon style={{ height: "18px" }} />&nbsp; <p style={{ fontWeight: "bold" }}>ref2 : &nbsp;</p>{ref.ref2}
+                        <LibraryBooksIcon style={{ height: "18px" }} />&nbsp; <p style={{ fontWeight: "bold" }}>ref2 : &nbsp;</p>{Ref.ref2}
                     </div>
                 </CardContent>
             </Card>

@@ -14,7 +14,7 @@ function PostList() {
     const [ref2, setRef2] = useState('')
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
-     useEffect( async() => {
+    useEffect(async () => {
         await axios.get('http://localhost:5000/sms')
             .then(response => {
                 console.log(response)
@@ -71,8 +71,8 @@ function PostList() {
         window.location.reload();
     };
 
-    const delete_sms = async() => {
-       await axios
+    const delete_sms = async () => {
+        await axios
             .delete("http://localhost:5000/sms")
             .then((res) => {
                 console.log(res)
@@ -83,7 +83,7 @@ function PostList() {
         window.location.reload();
     };
 
-    const delete_bank = async() => {
+    const delete_bank = async () => {
         await axios
             .delete("http://localhost:5000/bankref")
             .then((res) => {
